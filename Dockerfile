@@ -1,5 +1,7 @@
 FROM nginx
 
+WORKDIR /home
+
 COPY . /
 
 COPY nginx.conf /etc/nginx/
