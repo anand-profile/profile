@@ -4,7 +4,7 @@ def dockerImageTag
 def build_number
 def dockerImage
 def baseImage = 'nginx'
-def dockerimagerepo = 'anandtest/nginximages'
+def dockerimagerepo = 'anandtest/anand_profile'
 def dockerRegistry = 'hub.docker.com'
 def dockerlist
 
