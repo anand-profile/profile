@@ -2,7 +2,7 @@ FROM nginx
 
 WORKDIR /home
 
-COPY . /
+COPY . /home
 
 COPY nginx.conf /etc/nginx/
 
