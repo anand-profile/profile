@@ -63,7 +63,7 @@ pipeline {
 		stage('Deploy to CSA') {
             steps {
                 script {
-				     sh """ docker run --rm -v $WORKSPACE:/home $dockerImage sh -c 'ansible-playbook -vvv /home/deploy.yml -i $ansibleHostsPath --extra-vars="repo_name=$reponame dockerImage=$dockerImage dockerimagerepo=$dockerimagerepo"' """
+				     sh """ docker run --rm -v $WORKSPACE:/home ${dockerimagerepo}:${dockerImageTag} sh -c 'ansible-playbook -vvv /home/deploy.yml -i $ansibleHostsPath --extra-vars="repo_name=$reponame dockerImage=${dockerimagerepo}:${dockerImageTag} dockerimagerepo=$dockerimagerepo"' """
                 	// sh """docker run -t -d -p 80:80 --name Nginx_Docker_test ${dockerimagerepo}:${dockerImageTag}"""
                 }
             }
