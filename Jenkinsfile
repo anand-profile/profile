@@ -40,7 +40,7 @@ pipeline {
                 echo "Building Docker Image"
                 script {
                        docker.image(baseImage).inside { 
-							sh ' ls -ltr'
+							sh ' touch anand_test_docker.txt '
                         }
 			dockerImage = docker.build "${dockerimagerepo}:${dockerImageTag}"
                     sh 'docker images'
